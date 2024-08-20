@@ -117,7 +117,16 @@ class EditUserView extends GetView<EditUserController> {
             width: Get.width,
             child: ElevatedButton(
               onPressed: () {
-                controller.editToFirebase();
+                Get.put(EditUserController()).editToFirebase(
+                    index: index,
+                    firstName: firstName.text,
+                    lastName: lastName.text,
+                    email: email.text,
+                    avatarUrl: avatarUrl.text,
+                    height: int.parse(height.text),
+                    umur: int.parse(umur.text),
+                    weight: int.parse(weight.text));
+                // Get.back();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

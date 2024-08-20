@@ -13,7 +13,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     // ignore: avoid_print
     print("REBUILD");
-    controller.firebaseToList();
+    // controller.firebaseToList();
     return Scaffold(
       appBar: AppBar(
         title: const Text('ALL USERS'),

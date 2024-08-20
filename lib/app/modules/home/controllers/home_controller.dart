@@ -11,6 +11,12 @@ class HomeController extends GetxController {
 
   RxList<Map<String, dynamic>> users = <Map<String, dynamic>>[].obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    firebaseToList();
+  }
+
   void firebaseToList() async {
     final response = await http.get(url);
 
@@ -33,6 +39,7 @@ class HomeController extends GetxController {
       }).toList();
 
       users.value = userList;
+      refresh();
     } else {
       print('Data tidak dalam format yang diharapkan');
     }
